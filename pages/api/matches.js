@@ -17,4 +17,7 @@ export default async function handler(req, res) {
         const { value } = await MatchesController.addScore(matchID, score);
         res.status(200).json(value);
     }
+    else {
+        res.status(405).json({ message: 'Unrecognised HTTP method for this API' });
+    }
 }
